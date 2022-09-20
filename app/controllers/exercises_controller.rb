@@ -2,7 +2,7 @@ class ExercisesController < ApplicationController
   def exercise1
     # 【要件】注文されていないすべての料理を返すこと
     #   * left_outer_joinsを使うこと
-    @foods = Food
+    @foods = Food.left_outer_joins(:orders)
   end
 
   def exercise2
