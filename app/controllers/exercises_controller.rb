@@ -17,7 +17,7 @@ class ExercisesController < ApplicationController
     #   * 取得したAddressのインスタンスにorders_countと呼びかけると注文の数を返すこと
     @address = Address.joins(:orders)
     .select("addresses., count(orders.) as orders_count")
-    .group("addresses").order(orders_count:  :DESC).first
+    .group("count(orders.)").order(orders_count:  :DESC).first
   end
 
   def exercise4 
